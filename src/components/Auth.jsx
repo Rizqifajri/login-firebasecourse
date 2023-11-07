@@ -5,7 +5,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth, googleProvider } from "../config/firebase-config";
-import Google from '../assets/logoGoogle.png'
+import Google from "../assets/logoGoogle.png";
 
 export const Auth = () => {
   const [email, setEmail] = useState("");
@@ -28,8 +28,6 @@ export const Auth = () => {
       await signInWithPopup(auth, googleProvider);
     } catch (error) {
       console.error("Error", error);
-    } finally {
-      alert("Yeay, anda berhasil Login");
     }
   };
 
@@ -70,7 +68,10 @@ export const Auth = () => {
         <button
           className="bg-blue-500 text-white p-2 rounded-sm w-72 hover:bg-green-500 flex justify-center items-center  "
           onClick={signInWithGoogle}>
-          Sign In with <span><img className="w-10" src={Google} alt="LOGO" /></span>
+          Sign In with{" "}
+          <span>
+            <img className="w-10" src={Google} alt="LOGO" />
+          </span>
         </button>
         <button
           className="bg-red-400 text-white p-2 rounded-sm w-72 hover:bg-red-500"
